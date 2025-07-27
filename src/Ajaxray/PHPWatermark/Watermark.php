@@ -43,7 +43,9 @@ class Watermark
         'fontSize' => 24,
         'opacity' => 0.3,
         'rotate' => 0,
-        'style' => 1, // STYLE_IMG_DISSOLVE or STYLE_TEXT_BEVEL
+        'style' => 1, // STYLE_IMG_DISSOLVE or STYLE_TEXT_BEVEL,
+        'quality' => 100,
+        'density' => 90
     ];
 
     public function __construct(string $source)

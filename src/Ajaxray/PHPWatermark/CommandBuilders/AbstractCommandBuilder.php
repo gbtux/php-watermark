@@ -85,4 +85,14 @@ abstract class AbstractCommandBuilder
     {
         return empty($this->isTiled()) ? '' : '-tile';
     }
+
+    protected function getQuality(): string
+    {
+        return $this->options['quality'];
+    }
+
+    protected function getDensity(): string
+    {
+        return $this->options['density'];
+    }
 }
