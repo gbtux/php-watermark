@@ -86,12 +86,12 @@ abstract class AbstractCommandBuilder
         return empty($this->isTiled()) ? '' : '-tile';
     }
 
-    protected function getQuality(): string
+    protected function getQuality(): int
     {
         return $this->options['quality'];
     }
 
-    protected function getDensity(): string
+    protected function getDensity(): int
     {
         return $this->options['density'];
     }

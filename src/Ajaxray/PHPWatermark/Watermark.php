@@ -186,6 +186,28 @@ class Watermark
         return $this;
     }
 
+    /**
+     * @param int $density Density
+     * @return self
+     */
+    public function setDensity(int $density): self
+    {
+        $this->options['density'] = $density;
+
+        return $this;
+    }
+
+    /**
+     * @param int $quality Quality
+     * @return $this
+     */
+    public function setQuality(int $quality): self
+    {
+        $this->options['quality'] = $quality;
+
+        return $this;
+    }
+
     final public function supportedPositionList(): array
     {
         return [
