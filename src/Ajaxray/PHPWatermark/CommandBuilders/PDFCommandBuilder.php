@@ -13,14 +13,18 @@ final class PDFCommandBuilder extends AbstractCommandBuilder implements Watermar
         $opacity = $this->getMarkerOpacity();
         $anchor = $this->getAnchor();
         $offset = $this->getImageOffset();
+        $quality = $this->getQuality();
+        $density = $this->getDensity();
 
         return sprintf(
-            "convert %s %s  miff:- | convert -density 100 %s null: - -%s -%s -quality 100 -compose multiply -layers composite %s",
+            "convert %s %s  miff:- | convert -density %s %s null: - -%s -%s -quality %s -compose multiply -layers composite %s",
             $marker,
             $opacity,
+            $density,
             $source,
             $anchor,
             $offset,
+            $quality,
             $destination
         );
     }
@@ -34,14 +38,18 @@ final class PDFCommandBuilder extends AbstractCommandBuilder implements Watermar
         $anchor = $this->getAnchor();
         $rotate = $this->getRotate();
         $font = $this->getFont();
+        $quality = $this->getQuality();
+        $density = $this->getDensity();
 
         list($light, $dark) = $this->getDuelTextColor();
         list($offsetLight, $offsetDark) = $this->getDuelTextOffset();
 
         return sprintf(
-            "convert %s -%s -quality 100 -density 100 %s -%s -annotate %s%s %s -%s -annotate %s%s %s  %s",
+            "convert %s -%s -quality %s -density %s %s -%s -annotate %s%s %s -%s -annotate %s%s %s  %s",
             $source,
             $anchor,
+            $quality,
+            $density,
             $font,
             $light,
             $rotate,
