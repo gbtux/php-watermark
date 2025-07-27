@@ -4,7 +4,14 @@ namespace Ajaxray\PHPWatermark\CommandBuilders;
 
 final class PDFCommandBuilder extends AbstractCommandBuilder implements WatermarkCommandBuilderInterface
 {
-    /** @inheritDoc */
+    /**
+     * Build the imagemagick shell command for watermarking with Image
+     *
+     * @param string $markerImage The image file to watermark with
+     * @param string $output The watermarked output file
+     * @param array $options
+     * @return string
+     */
     public function getImageMarkCommand(string $markerImage, string $output, array $options): string
     {
         list($source, $destination) = $this->prepareContext($output, $options);
@@ -29,7 +36,14 @@ final class PDFCommandBuilder extends AbstractCommandBuilder implements Watermar
         );
     }
 
-    /** @inheritDoc */
+    /**
+     * Build the imagemagick shell command for watermarking with Text
+     *
+     * @param string $text The text content to watermark with
+     * @param string $output The watermarked output file
+     * @param array $options
+     * @return string
+     */
     public function getTextMarkCommand(string $text, string $output, array $options): string
     {
         list($source, $destination) = $this->prepareContext($output, $options);

@@ -1,5 +1,5 @@
 {
-  "name": "ajaxray/php-watermark",
+  "name": "gbtux/php-watermark",
   "description": "Add text or image watermark on images.",
   "minimum-stability": "dev",
   "license": "MIT",
