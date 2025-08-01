@@ -46,6 +46,8 @@ For PHP versions `>= 5.6` to `<8` use `v0.1.2`
         ->setFontSize(48)
         ->setRotate(30)
         ->setOpacity(.4)
+	->setDensity(80) //default: 90
+	->setQuality(90) // default: 100
         ->write('path/to/output.jpg');
      
      
